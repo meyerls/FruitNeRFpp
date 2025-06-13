@@ -12,4 +12,5 @@
 
 # News
 * Code will be released around August 2025
-* 15.9.24: [Project Page](https://meyerls.github.io/fruit_nerfpp) released
+* 26.05.25: Released [Paper](https://arxiv.org/abs/2505.19863) on Arxiv.
+* 15.09.24: [Project Page](https://meyerls.github.io/fruit_nerfpp) released.
