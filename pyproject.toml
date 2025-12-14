@@ -1,0 +1,34 @@
+[project]
+name = "fruitnerfpp"
+description = "FruitNeRF with Contrastive Learning."
+version = "0.1.0"
+
+dependencies = ["nerfstudio >= 1.0.3"]
+
+[tool.setuptools.packages.find]
+include = ["cf_nerf*"]
+
+# register the entry point of your new method here:
+[project.entry-points.'nerfstudio.method_configs']
+cf_nerf_small = 'cf_nerf.cf_nerf_config:cf_nerf_small'
+cf_nerf = 'cf_nerf.cf_nerf_config:cf_nerf'
+cf_nerf_fuji = 'cf_nerf.cf_nerf_config:cf_nerf_fuji'
+cf_nerf_synthetic_cluster ='cf_nerf.cf_nerf_config:cf_nerf_synthetic_cluster'
+
+
+[project.scripts]
+# Note, add entrypoint name to nerfstudio/scripts/completions/install.py to include CLI completion
+ns-export-semantics = "cf_nerf.scripts.exporter:entrypoint"
+ns-count = "cf_nerf.scripts.count:entrypoint"
+ns-process-fruit-data = "cf_nerf.scripts.process_data:entrypoint"
+
+
+cf-nerf
+--data
+/home/se86kimy/Dropbox/07_data/CF-NeRF/FruitNerF/tree_02_SAM
+--viewer.camera-frustum-scale
+0.2
+--vis
+wandb
+--pipeline.model.temperature
+0.1
